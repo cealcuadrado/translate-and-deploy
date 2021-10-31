@@ -16,6 +16,19 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "en": {
+            "translation":"src/locale/messages.en.xlf",
+            "baseHref": ""
+          },
+          "es": {
+            "translation":"src/locale/messages.es.xlf",
+            "baseHref": ""
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -57,6 +70,16 @@
               ],
               "outputHashing": "all"
             },
+            "en":{
+              "localize":["en"],
+              "outputPath": "dist/translate-and-deploy-en",
+              "i18nMissingTranslation": "error"
+            },
+            "es": {
+              "localize":["es"],
+              "outputPath": "dist/translate-and-deploy-es",
+              "i18nMissingTranslation": "error"
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -73,6 +96,12 @@
           "configurations": {
             "production": {
               "browserTarget": "translate-and-deploy:build:production"
+            },
+            "en": {
+              "browserTarget": "translate-and-deploy:build:en"
+            },
+            "es": {
+              "browserTarget": "translate-and-deploy:build:es"
             },
             "development": {
               "browserTarget": "translate-and-deploy:build:development"
