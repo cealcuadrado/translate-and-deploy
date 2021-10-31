@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
+  localesList = [
+    { code: 'en', label: 'English' },
+    { code: 'es', label: 'Spanish' }
+  ];
+  
   constructor() { }
 
   ngOnInit(): void {
